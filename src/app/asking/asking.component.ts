@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-asking',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AskingComponent implements OnInit {
 
-  constructor() { }
+  question : FormControl;
+
+  constructor() {
+
+  }
 
   ngOnInit() {
+    this.question = new FormControl('', Validators.required);
+
+  }
+
+  envoyerQuestion() {
+    console.log(this.question.value);
   }
 
 }
