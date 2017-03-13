@@ -10,6 +10,8 @@ import { AppComponent } from './app.component';
 import { AskingComponent } from './asking/asking.component';
 import { MainComponent } from './main/main.component';
 
+import { GeneralService } from './general.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +26,7 @@ import { MainComponent } from './main/main.component';
     routing,
     MaterialModule.forRoot()
   ],
-  providers: [],
+  providers: [GeneralService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
