@@ -1,2 +1,9 @@
 <h2>Yay, you can ask your question here !</h2>
-<button routerLink="/main">Go back home</button>
+<form action="envoyerQuestion()">
+  <md-input-container>
+    <input mdInput placeholder="Votre Question" [formControl]="question">
+  </md-input-container>
+
+  <button md-raised-button (click)="envoyerQuestion()" >Envoyer</button>
+  <button md-button routerLink="/main">Go back home</button>
+</form>

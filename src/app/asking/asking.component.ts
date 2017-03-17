@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
+import { GeneralService } from '../general.service'
 
 @Component({
   selector: 'app-asking',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AskingComponent implements OnInit {
 
-  constructor() { }
+  question : FormControl;
+
+  constructor(private service : GeneralService) {
+
+  }
 
   ngOnInit() {
+    this.question = new FormControl('', Validators.required);
+
+  }
+
+  envoyerQuestion() {
+    this.service.sendQuestion(this.question.value);
   }
 
 }
