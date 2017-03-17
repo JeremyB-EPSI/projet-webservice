@@ -11,12 +11,16 @@ import { AskingComponent } from './asking/asking.component';
 import { MainComponent } from './main/main.component';
 
 import { GeneralService } from './general.service';
+import { QuestionsComponent } from './questions/questions.component';
+import { ToolbarComponent } from './toolbar/toolbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AskingComponent,
-    MainComponent
+    MainComponent,
+    QuestionsComponent,
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,

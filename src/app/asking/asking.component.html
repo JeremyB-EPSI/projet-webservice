@@ -1,9 +1,12 @@
-<h2>Yay, you can ask your question here !</h2>
-<form action="envoyerQuestion()">
-  <md-input-container>
-    <input mdInput placeholder="Votre Question" [formControl]="question">
-  </md-input-container>
-
-  <button md-raised-button (click)="envoyerQuestion()" >Envoyer</button>
-  <button md-button routerLink="/main">Go back home</button>
-</form>
+<md-card>
+  <md-card-content>
+    <h2 color="primary">Posez votre question, notre service tentera d'y répondre</h2>
+    <md-input-container>
+      <input mdInput placeholder="Votre Question" [formControl]="question">
+    </md-input-container>
+  </md-card-content>
+  <md-card-actions>
+    <button md-raised-button color="primary" (click)="envoyerQuestion()" >Envoyer</button>
+    <button md-raised-button color="accent" routerLink="/main">Retour à l'accueil</button>
+  </md-card-actions>
+</md-card>
