@@ -5,9 +5,16 @@ export class GeneralService {
 
   constructor() { }
 
-  sendQuestion (q) {
+  sendQuestion (q: string) {
     console.log(q);
+  }
 
+  getQuestion (id: number) {
+
+  }
+
+  GetQuestionsList() {
+    
   }
 
 }
