@@ -9,7 +9,7 @@ export class GeneralService {
   constructor(private http: Http) { }
 
   sendQuestion (q: string) {
-    this.http.post(`${this.API}/test`, {q}).subscribe(data => console.log(data));
+    this.http.get(`${this.API}/test`, {}).subscribe(data => console.log(data));
   }
 
   getQuestion (id: number) {

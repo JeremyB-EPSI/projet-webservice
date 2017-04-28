@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -28,7 +29,8 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
     ReactiveFormsModule,
     HttpModule,
     routing,
-    MaterialModule.forRoot()
+    MaterialModule.forRoot(),
+    BrowserAnimationsModule
   ],
   providers: [GeneralService],
   bootstrap: [AppComponent]
