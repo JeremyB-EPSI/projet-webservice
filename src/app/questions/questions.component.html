@@ -1,10 +1,19 @@
 <md-card>
 	<md-card-content>
 		<h2>Questions</h2>
-    Vous trouverez ici la liste des questions posées sur notre service
+    	<p>Entrez le numéro d'identifiant de question qui vous a été retourné lorsque vous avez soumis votre question dans le champ ci-dessous, puis cliquez sur "Obtenir la réponse"</p>
+		<md-input-container>
+			<input mdInput placeholder="Identifiant de la question" #inputId/>
+		</md-input-container>
+		<div *ngIf="questionReceived && question">
+			<p>Question posée : {{ question.libelle }}</p>
+			<p *ngIf="question.reponse">Réponse à la question : {{ question.reponse }}</p>
+			<p *ngIf="!question.reponse">La question n'a pas encore eu de réponse</p>
+		</div>
 	</md-card-content>
 	<md-card-actions>
 		<button md-raised-button color="primary" routerLink="/asking">Poser une question</button>
 		<button md-raised-button color="accent" routerLink="/main">Retour à l'accueil</button>
+		<button md-raised-button color="primary" (click)="getQuestion(inputId.value)">Obtenir la réponse</button>
 	</md-card-actions>
 </md-card>

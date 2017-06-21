@@ -4,6 +4,7 @@
     <md-input-container>
       <input mdInput placeholder="Votre Question" [formControl]="question">
     </md-input-container>
+    <p *ngIf="questionSent" id="response">Question créée avec succès avec l'identifiant "{{ questionId }}", vous pourrez vous rendre <a [routerLink]="['/questions']" [queryParams]="{ id: questionId }">à la page suivante</a> pour consulter la réponse lorsqu'elle sera disponible</p>
   </md-card-content>
   <md-card-actions>
     <button md-raised-button color="primary" (click)="envoyerQuestion()" >Envoyer</button>

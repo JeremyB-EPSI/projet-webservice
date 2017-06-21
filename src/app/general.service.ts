@@ -9,11 +9,11 @@ export class GeneralService {
   constructor(private http: Http) { }
 
   sendQuestion (q: string) {
-    this.http.get(`${this.API}/test`, {}).subscribe(data => console.log(data));
+    return this.http.post(`${this.API}/question`, { question : q });
   }
 
   getQuestion (id: number) {
-
+    return this.http.get(`${this.API}/question/`+id);
   }
 
   GetQuestionsList() {

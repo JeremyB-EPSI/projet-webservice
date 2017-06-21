@@ -9,7 +9,9 @@ import { GeneralService } from '../general.service'
 })
 export class AskingComponent implements OnInit {
 
-  question : FormControl;
+  question: FormControl;
+  questionSent: boolean = false;
+  questionId: number;
 
   constructor(private service : GeneralService) {
 
@@ -17,11 +19,13 @@ export class AskingComponent implements OnInit {
 
   ngOnInit() {
     this.question = new FormControl('', Validators.required);
-
   }
 
   envoyerQuestion() {
-    this.service.sendQuestion(this.question.value);
+    this.service.sendQuestion(this.question.value).subscribe(data => {
+      this.questionId = data.json();
+      this.questionSent = true;
+    });
   }
 
 }
