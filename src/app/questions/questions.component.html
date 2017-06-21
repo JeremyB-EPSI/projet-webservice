@@ -5,7 +5,7 @@
 		<md-input-container>
 			<input mdInput placeholder="Identifiant de la question" #inputId/>
 		</md-input-container>
-		<div *ngIf="questionReceived && question">
+		<div *ngIf="questionReceived && question" id="question_reponse">
 			<p>Question posée : {{ question.libelle }}</p>
 			<p *ngIf="question.reponse">Réponse à la question : {{ question.reponse }}</p>
 			<p *ngIf="!question.reponse">La question n'a pas encore eu de réponse</p>
